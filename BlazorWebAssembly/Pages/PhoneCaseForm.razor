@@ -1,0 +1,157 @@
+﻿@page "/phonecaseform"
+@using BlazorWebAssembly.Models
+<PageTitle>Phone Case Form</PageTitle>
+
+<h3>Phone Cases!</h3>
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-4">
+            <h5>Allowed Brands</h5>
+            <ul>
+                <li>Samsung</li>
+                <li>Google</li>
+                <li>Nokia</li>
+                <li>Motorola</li>
+                <li>BlackBerry</li>
+                <li>Sony</li>
+                <li>Lg</li>
+                <li>Razer</li>
+            </ul>
+        </div>
+        <div class="col-md-4">
+            <h5>Allowed Materials</h5>
+            <ul>
+                <li>Silicone</li>
+                <li>Plastic</li>
+                <li>Leather</li>
+                <li>Metal</li>
+                <li>Rubber</li>
+                <li>Wood</li>
+                <li>TPU</li>
+                <li>Carbon Fiber</li>
+                <li>Tungsten Steel</li>
+                <li>ABS</li>
+                <li>Titanium</li>
+                <li>Sheet Metal</li>
+                <li>Clam Shell</li>
+                <li>Faux Animal Fur</li>
+                <li>Appleskin</li>
+            </ul>
+        </div>
+        <div class="col-md-4">
+            <h5>Allowed Accent Colors</h5>
+            <ul>
+                <li>Blue</li>
+                <li>Blueberry</li>
+                <li>Pink</li>
+                <li>Yellow</li>
+                <li>Yellowish</li>
+                <li>Green</li>
+                <li>Greener</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<EditForm Model="@_case" OnValidSubmit="AddCase" FormName="PhoneCase" class="container mt-5">
+    <DataAnnotationsValidator />
+    <ValidationSummary class="mt-3 text-danger" />
+
+    <div class="mb-3">
+        <label for="brand" class="form-label">Phone Brand:</label>
+        <input id="brand" type="text" class="form-control" @bind="_case.Brand" />
+        <ValidationMessage For="() => _case.Brand" />
+    </div>
+
+    <div class="mb-3">
+        <label for="model" class="form-label">Phone Model:</label>
+        <input id="model" type="text" class="form-control" @bind="_case.Model" />
+        <ValidationMessage For="() => _case.Model" />
+    </div>
+
+    <div class="mb-3">
+        <label for="material" class="form-label">Case Material:</label>
+        <input id="material" type="text" class="form-control" @bind="_case.Material" />
+        <ValidationMessage For="() => _case.Material" />
+    </div>
+
+    <div class="mb-3">
+        <label for="cost" class="form-label">Cost (in $):</label>
+        <input id="cost" type="number" class="form-control" @bind="_case.Cost" />
+        <ValidationMessage For="() => _case.Cost" />
+    </div>
+
+    <div class="mb-3">
+        <label for="trim" class="form-label">Case Trim Color:</label>
+        <input id="trim" type="text" class="form-control" @bind="_case.TrimColor" />
+        <ValidationMessage For="() => _case.TrimColor" />
+    </div>
+
+    <div class="mb-3">
+        <label for="accent" class="form-label">Case Accent Color:</label>
+        <input id="accent" type="text" class="form-control" @bind="_case.AccentColor" />
+        <ValidationMessage For="() => _case.AccentColor" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Order Case</button>
+</EditForm>
+
+<ul class="list-group mt-5">
+    @foreach(var _case in PhoneCases)
+    {
+    <li class="list-group-item">
+        <strong>Brand:</strong> @_case.Brand <br />
+        <strong>Model:</strong> @_case.Model <br />
+        <strong>Material:</strong> @_case.Material <br />
+        <strong>Cost:</strong> @_case.Cost.ToString("C") <br />
+        <strong>Trim:</strong> @_case.TrimColor <br />
+        <strong>Accent:</strong> @_case.AccentColor <br />
+    </li>
+    }
+</ul>
+
+@code {
+    private PhoneCase _case = new PhoneCase();
+    public readonly List<PhoneCase> PhoneCases = [];
+
+    private bool DuplicatePhone()
+    {
+        if (
+            PhoneCases.Any(c => string.Equals(c.Brand, _case.Brand, StringComparison.OrdinalIgnoreCase)) &&
+            PhoneCases.Any(c => string.Equals(c.Model, _case.Model, StringComparison.OrdinalIgnoreCase)) &&
+            PhoneCases.Any(c => string.Equals(c.Material, _case.Material, StringComparison.OrdinalIgnoreCase)) &&
+            PhoneCases.Any(c => decimal.Equals(c.Cost, _case.Cost)) &&
+            PhoneCases.Any(c => string.Equals(c.TrimColor, _case.TrimColor, StringComparison.OrdinalIgnoreCase)) &&
+            PhoneCases.Any(c => string.Equals(c.AccentColor, _case.AccentColor, StringComparison.OrdinalIgnoreCase))
+        )
+        {
+            return false;
+        }
+        return true;
+    }
+    
+    private void AddCase()
+    {
+        if (string.IsNullOrWhiteSpace(_case.Brand) ||
+            string.IsNullOrWhiteSpace(_case.Model) ||
+            string.IsNullOrWhiteSpace(_case.Material) ||
+            string.IsNullOrWhiteSpace(_case.TrimColor) ||
+            string.IsNullOrWhiteSpace(_case.AccentColor) ||
+            _case.Cost is < 1 or > 850 ||
+            !DuplicatePhone()
+           ) return;
+        
+        var numOfPhones = PhoneCases.Count;
+        PhoneCases.Add(_case);
+            
+        var numOfPhonesUpdated = PhoneCases.Count;
+        if (numOfPhonesUpdated > numOfPhones)
+        {
+            _case = new PhoneCase(); 
+        }
+        else
+        {
+            throw new Exception("Phone Case was not added.");
+        }
+    }
+}

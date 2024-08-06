@@ -1,0 +1,79 @@
+is_global = true
+build_property.TargetFramework = net7.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = BlazorWebAssembly
+build_property.RootNamespace = BlazorWebAssembly
+build_property.ProjectDir = C:\Classes\Summer 24\Advanced .NET\Unit 2 Blazor\VSCodeBlazorUnitTesting\BlazorWebAssembly\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 7.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Classes\Summer 24\Advanced .NET\Unit 2 Blazor\VSCodeBlazorUnitTesting\BlazorWebAssembly
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Classes/Summer 24/Advanced .NET/Unit 2 Blazor/VSCodeBlazorUnitTesting/BlazorWebAssembly/App.razor]
+build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Classes/Summer 24/Advanced .NET/Unit 2 Blazor/VSCodeBlazorUnitTesting/BlazorWebAssembly/Pages/Counter.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Classes/Summer 24/Advanced .NET/Unit 2 Blazor/VSCodeBlazorUnitTesting/BlazorWebAssembly/Pages/DisplayOrder.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGlzcGxheU9yZGVyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Classes/Summer 24/Advanced .NET/Unit 2 Blazor/VSCodeBlazorUnitTesting/BlazorWebAssembly/Pages/FetchData.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmV0Y2hEYXRhLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Classes/Summer 24/Advanced .NET/Unit 2 Blazor/VSCodeBlazorUnitTesting/BlazorWebAssembly/Pages/FossilForm.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRm9zc2lsRm9ybS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Classes/Summer 24/Advanced .NET/Unit 2 Blazor/VSCodeBlazorUnitTesting/BlazorWebAssembly/Pages/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Classes/Summer 24/Advanced .NET/Unit 2 Blazor/VSCodeBlazorUnitTesting/BlazorWebAssembly/Pages/LiveUpdates.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTGl2ZVVwZGF0ZXMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Classes/Summer 24/Advanced .NET/Unit 2 Blazor/VSCodeBlazorUnitTesting/BlazorWebAssembly/Pages/PhoneCaseForm.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGhvbmVDYXNlRm9ybS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Classes/Summer 24/Advanced .NET/Unit 2 Blazor/VSCodeBlazorUnitTesting/BlazorWebAssembly/Pages/Todo.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVG9kby5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Classes/Summer 24/Advanced .NET/Unit 2 Blazor/VSCodeBlazorUnitTesting/BlazorWebAssembly/Shared/SurveyPrompt.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN1cnZleVByb21wdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Classes/Summer 24/Advanced .NET/Unit 2 Blazor/VSCodeBlazorUnitTesting/BlazorWebAssembly/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Classes/Summer 24/Advanced .NET/Unit 2 Blazor/VSCodeBlazorUnitTesting/BlazorWebAssembly/Shared/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-9wcwp57ndo
+
+[C:/Classes/Summer 24/Advanced .NET/Unit 2 Blazor/VSCodeBlazorUnitTesting/BlazorWebAssembly/Shared/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdk1lbnUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-q8yp7cur1t
+
+[C:/Classes/Summer 24/Advanced .NET/Unit 2 Blazor/VSCodeBlazorUnitTesting/BlazorWebAssembly/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Classes/Summer 24/Advanced .NET/Unit 2 Blazor/VSCodeBlazorUnitTesting/BlazorWebAssembly/Pages/_Host.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0hvc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 

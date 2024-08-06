@@ -1,0 +1,75 @@
+﻿@page "/fossilform"
+@using BlazorWebAssembly.DBServices
+@using BlazorWebAssembly.Models
+@using Microsoft.EntityFrameworkCore
+@inject FossilDbContext DbContext
+<h3>FossilForm</h3>
+
+<EditForm Model="@_fossil" OnValidSubmit="AddFossil">
+    <DataAnnotationsValidator />
+
+    <div>
+        <label for="name">Name:</label>
+        <input id="name" @bind="_fossil.Name" />
+
+    </div>
+    <div>
+        <label for="species">Species:</label>
+        <input id="species" @bind="_fossil.Species" />
+
+    </div>
+    <div>
+        <label for="age">Age (in million years):</label>
+        <input id="age" type="number" @bind="_fossil.Age" />
+
+    </div>
+    <div>
+        <label for="location">Location Found:</label>
+        <input id="location" @bind="_fossil.Location" />
+
+    </div>
+    <div>
+        <label for="description">Description:</label>
+        <textarea id="description" @bind="_fossil.Description"></textarea>
+
+    </div>
+    <button type="submit">Add Fossil</button>
+
+    <ValidationSummary />
+
+</EditForm>
+
+<ul>
+    @foreach(var fossil in Fossils)
+    {
+        <li>
+            <strong>Name:</strong> @fossil.Name <br />
+            <strong>Species:</strong> @fossil.Species <br />
+            <strong>Age:</strong> @fossil.Age <br />
+            <strong>Location:</strong> @fossil.Location <br />
+            <strong>Description:</strong> @fossil.Description <br />
+        </li>
+    }
+</ul>
+
+@code {
+    private Fossil _fossil { get; set; } = new Fossil();
+
+    public readonly List<Fossil> Fossils = [];
+
+    private async Task AddFossil()
+    {
+        if (!string.IsNullOrWhiteSpace(_fossil.Name) &&
+            !string.IsNullOrWhiteSpace(_fossil.Species) &&
+            _fossil.Age > 0 &&
+            !string.IsNullOrWhiteSpace(_fossil.Location) &&
+            !string.IsNullOrWhiteSpace(_fossil.Description) &&
+            Fossils.Any(f => string.Equals(f.Name, _fossil.Name, StringComparison.OrdinalIgnoreCase)))
+        {
+            Fossils.Add(_fossil);
+            DbContext.Fossils.Add(_fossil);
+            await DbContext.SaveChangesAsync();
+            _fossil = new Fossil(); 
+        }
+    }
+}
