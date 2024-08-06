@@ -1,5 +1,5 @@
 ﻿# Stage 1: Build the application
-FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 
 # Set the working directory in the container
 WORKDIR /app
@@ -15,7 +15,7 @@ COPY . ./
 RUN dotnet publish -c Release -o out
 
 # Stage 2: Serve the application using Nginx
-FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime
+FROM mcr.microsoft.com/dotnet/aspnet:7.0 AS runtime
 WORKDIR /app
 
 # Copy the build output from the previous stage
