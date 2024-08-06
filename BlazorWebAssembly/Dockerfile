@@ -21,6 +21,6 @@ WORKDIR /app
 # Copy the build output from the previous stage
 COPY --from=build /app/out/ .
 
-ENTRYPOINT ["dotnet", "BlazorWebAssebly.dll"]
+ENTRYPOINT ["dotnet", "BlazorWebAssembly.dll"]
 
 
